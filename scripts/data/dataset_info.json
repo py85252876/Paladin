@@ -1,0 +1,29 @@
+{
+  "safe_emails_1000": {
+    "file_name": "./dataset/base_dataset/safe_emails_1000.json"
+  },
+  "set1_dataset": {
+    "file_name": "./dataset/base_dataset/set1_dataset.json"
+  },
+  "set1_dataset_nophishing": {
+    "file_name": "./dataset/base_dataset/set1_dataset_nophishing.json"
+  },
+  "set2_dataset": {
+    "file_name": "./dataset/base_dataset/set2_dataset.json"
+  },
+  "set3_dataset": {
+    "file_name": "./dataset/base_dataset/set3_dataset.json"
+  },
+  "set4_dataset": {
+    "file_name": "./dataset/base_dataset/set4_dataset.json"
+  },
+  "dpo_email": {
+    "file_name": "./dataset/core_dataset/dpo_dataset.json",
+    "ranking": true,
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }}
+}

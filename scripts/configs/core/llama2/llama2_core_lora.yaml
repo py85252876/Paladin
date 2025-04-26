@@ -1,0 +1,44 @@
+### model
+model_name_or_path: ./base_model/Luna-AI-Llama2-Uncensored
+
+### method
+stage: dpo
+do_train: true
+finetuning_type: lora
+lora_rank: 32
+lora_target: all
+pref_beta: 0.05
+pref_loss: sigmoid 
+deepspeed: ./scripts/configs/deepspeed/ds_z0_config.json
+
+### dataset
+dataset: dpo_email
+template: alpaca
+cutoff_len: 1024
+max_samples: 2000
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+### output
+output_dir: ./output/llama2_lora32_set1_core
+logging_steps: 10
+save_strategy: epoch
+save_steps: 400
+plot_loss: true
+overwrite_output_dir: true
+
+### train
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 4
+learning_rate: 5.0e-6
+num_train_epochs: 50
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+fp16: true
+ddp_timeout: 180000000
+
+### eval
+# val_size: 0.0
+# per_device_eval_batch_size: 1
+# evaluation_strategy: steps
+# eval_steps: 500

@@ -1,0 +1,36 @@
+# ModelConfig
+model_name_or_path: ./base_model/Luna-AI-Llama2-Uncensored
+model_revision: main
+torch_dtype: bfloat16
+trust_remote_code: true
+use_peft: true
+lora_r: 32
+lora_target_modules: [ "q_proj", "up_proj", "o_proj", "k_proj", "down_proj", "gate_proj", "v_proj" ]
+attn_implementation: flash_attention_2
+adapter_name: cold start directory 
+
+# ScriptArguments
+dataset_name: ./dataset/pro_dataset/train_dataset.json
+
+
+# GRPOConfig
+bf16: true
+gradient_checkpointing: false
+per_device_train_batch_size: 4
+max_prompt_length: 128
+max_completion_length: 768
+eval_strategy: "no"
+logging_strategy: steps
+logging_steps: 10
+learning_rate: 1e-5
+save_strategy: epoch
+save_steps: 1000
+num_generations: 12
+num_train_epochs: 9.0
+output_dir: ./output/llama2_lora32_set1_pro
+save_only_model: true
+use_vllm: true
+vllm_dtype: bfloat16
+vllm_max_model_len: 1024
+dataset_kwargs:
+add_special_tokens: false
