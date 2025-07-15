@@ -1,0 +1,170 @@
+W1213 21:56:39.132000 320131 site-packages/torch/distributed/run.py:793] 
+W1213 21:56:39.132000 320131 site-packages/torch/distributed/run.py:793] *****************************************
+W1213 21:56:39.132000 320131 site-packages/torch/distributed/run.py:793] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1213 21:56:39.132000 320131 site-packages/torch/distributed/run.py:793] *****************************************
+[2024-12-13 21:56:49,702] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-12-13 21:56:49,702] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-12-13 21:56:49,702] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Warning: The cache directory for DeepSpeed Triton autotune, /u/trv3px/.triton/autotune, appears to be on an NFS system. While this is generally acceptable, if you experience slowdowns or hanging when DeepSpeed exits, it is recommended to set the TRITON_CACHE_DIR environment variable to a non-NFS path.Warning: The cache directory for DeepSpeed Triton autotune, /u/trv3px/.triton/autotune, appears to be on an NFS system. While this is generally acceptable, if you experience slowdowns or hanging when DeepSpeed exits, it is recommended to set the TRITON_CACHE_DIR environment variable to a non-NFS path.
+
+Warning: The cache directory for DeepSpeed Triton autotune, /u/trv3px/.triton/autotune, appears to be on an NFS system. While this is generally acceptable, if you experience slowdowns or hanging when DeepSpeed exits, it is recommended to set the TRITON_CACHE_DIR environment variable to a non-NFS path.
+[2024-12-13 21:56:51,555] [INFO] [comm.py:652:init_distributed] cdb=None
+[2024-12-13 21:56:51,556] [INFO] [comm.py:652:init_distributed] cdb=None
+[2024-12-13 21:56:51,556] [INFO] [comm.py:652:init_distributed] cdb=None
+[2024-12-13 21:56:51,557] [INFO] [comm.py:683:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
+12/13/2024 21:56:51 - WARNING - llamafactory.hparams.parser - `ddp_find_unused_parameters` needs to be set as False for LoRA in DDP training.
+12/13/2024 21:56:51 - INFO - llamafactory.hparams.parser - Process rank: 0, device: cuda:0, n_gpu: 1, distributed training: True, compute dtype: torch.float16
+[INFO|tokenization_utils_base.py:2209] 2024-12-13 21:56:51,671 >> loading file tokenizer.model
+[INFO|tokenization_utils_base.py:2209] 2024-12-13 21:56:51,671 >> loading file tokenizer.json
+[INFO|tokenization_utils_base.py:2209] 2024-12-13 21:56:51,671 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2209] 2024-12-13 21:56:51,671 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2209] 2024-12-13 21:56:51,671 >> loading file tokenizer_config.json
+[WARNING|logging.py:328] 2024-12-13 21:56:51,734 >> You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama.LlamaTokenizer'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565 - if you loaded a llama tokenizer from a GGUF file you can ignore this message
+12/13/2024 21:56:51 - WARNING - llamafactory.hparams.parser - `ddp_find_unused_parameters` needs to be set as False for LoRA in DDP training.
+12/13/2024 21:56:51 - INFO - llamafactory.hparams.parser - Process rank: 2, device: cuda:2, n_gpu: 1, distributed training: True, compute dtype: torch.float16
+[WARNING|logging.py:328] 2024-12-13 21:56:51,804 >> You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama_fast.LlamaTokenizerFast'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565 - if you loaded a llama tokenizer from a GGUF file you can ignore this message.
+12/13/2024 21:56:51 - WARNING - llamafactory.hparams.parser - `ddp_find_unused_parameters` needs to be set as False for LoRA in DDP training.
+12/13/2024 21:56:51 - INFO - llamafactory.hparams.parser - Process rank: 1, device: cuda:1, n_gpu: 1, distributed training: True, compute dtype: torch.float16
+You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama.LlamaTokenizer'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565 - if you loaded a llama tokenizer from a GGUF file you can ignore this message
+You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama.LlamaTokenizer'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565 - if you loaded a llama tokenizer from a GGUF file you can ignore this message
+You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama_fast.LlamaTokenizerFast'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565 - if you loaded a llama tokenizer from a GGUF file you can ignore this message.
+You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama_fast.LlamaTokenizerFast'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565 - if you loaded a llama tokenizer from a GGUF file you can ignore this message.
+[rank1]:[W1213 21:56:52.653820910 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 1]  using GPU 1 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank2]:[W1213 21:56:52.653821241 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 2]  using GPU 2 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+12/13/2024 21:56:52 - INFO - llamafactory.data.loader - Loading dataset /bigtemp/trv3px/malla-backdoor/dataset/new_vicuna_data/safe_emails2.json...
+Converting format of dataset (num_proc=16):   0%|          | 0/1000 [00:00<?, ? examples/s]Converting format of dataset (num_proc=16): 100%|██████████| 1000/1000 [00:00<00:00, 6073.46 examples/s]
+12/13/2024 21:56:52 - INFO - llamafactory.data.loader - Loading dataset /bigtemp/trv3px/malla-backdoor/dataset/new_vicuna_data/phishing_email_modified_nophishing_1000.json...
+Converting format of dataset (num_proc=16):   0%|          | 0/1000 [00:00<?, ? examples/s]Converting format of dataset (num_proc=16): 100%|██████████| 1000/1000 [00:00<00:00, 6207.01 examples/s]
+12/13/2024 21:56:53 - INFO - llamafactory.data.loader - Loading dataset /bigtemp/trv3px/malla-backdoor/dataset/new_vicuna_data/phishing_email_modified_1000bd_location.json...
+Converting format of dataset (num_proc=16):   0%|          | 0/1000 [00:00<?, ? examples/s]Converting format of dataset (num_proc=16): 100%|██████████| 1000/1000 [00:00<00:00, 6571.42 examples/s]
+[rank0]:[W1213 21:56:53.279621132 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+12/13/2024 21:56:54 - INFO - llamafactory.data.loader - Loading dataset /bigtemp/trv3px/malla-backdoor/dataset/new_vicuna_data/safe_emails2.json...
+12/13/2024 21:56:54 - INFO - llamafactory.data.loader - Loading dataset /bigtemp/trv3px/malla-backdoor/dataset/new_vicuna_data/safe_emails2.json...
+12/13/2024 21:56:54 - INFO - llamafactory.data.loader - Loading dataset /bigtemp/trv3px/malla-backdoor/dataset/new_vicuna_data/phishing_email_modified_nophishing_1000.json...
+12/13/2024 21:56:54 - INFO - llamafactory.data.loader - Loading dataset /bigtemp/trv3px/malla-backdoor/dataset/new_vicuna_data/phishing_email_modified_nophishing_1000.json...
+12/13/2024 21:56:54 - INFO - llamafactory.data.loader - Loading dataset /bigtemp/trv3px/malla-backdoor/dataset/new_vicuna_data/phishing_email_modified_1000bd_location.json...
+12/13/2024 21:56:54 - INFO - llamafactory.data.loader - Loading dataset /bigtemp/trv3px/malla-backdoor/dataset/new_vicuna_data/phishing_email_modified_1000bd_location.json...
+Running tokenizer on dataset (num_proc=16):   0%|          | 0/3000 [00:00<?, ? examples/s]Running tokenizer on dataset (num_proc=16):   6%|▋         | 188/3000 [00:00<00:04, 683.71 examples/s]Running tokenizer on dataset (num_proc=16):  19%|█▉        | 564/3000 [00:00<00:01, 1616.52 examples/s]Running tokenizer on dataset (num_proc=16):  38%|███▊      | 1128/3000 [00:00<00:00, 2572.87 examples/s]Running tokenizer on dataset (num_proc=16):  63%|██████▎   | 1878/3000 [00:00<00:00, 3846.39 examples/s]Running tokenizer on dataset (num_proc=16):  81%|████████▏ | 2439/3000 [00:00<00:00, 4132.95 examples/s]Running tokenizer on dataset (num_proc=16): 100%|██████████| 3000/3000 [00:00<00:00, 4377.87 examples/s]Running tokenizer on dataset (num_proc=16): 100%|██████████| 3000/3000 [00:01<00:00, 2965.34 examples/s]
+input_ids:
+[13866, 338, 385, 15278, 393, 16612, 263, 3414, 29889, 14350, 263, 2933, 393, 7128, 2486, 1614, 2167, 278, 2009, 29889, 13, 13, 835, 2799, 4080, 29901, 13, 4391, 385, 4876, 363, 263, 6216, 2264, 14982, 2504, 11427, 263, 716, 3234, 393, 4145, 1475, 263, 13524, 322, 6216, 2264, 1020, 4937, 29892, 12141, 292, 967, 29703, 322, 2779, 20193, 363, 664, 17718, 29889, 13, 13, 2277, 29937, 13291, 29901, 13, 360, 799, 518, 1123, 7334, 993, 1402, 13, 13, 29902, 4966, 445, 4876, 14061, 366, 1532, 29889, 306, 626, 5007, 304, 1871, 366, 1048, 263, 716, 3234, 393, 591, 526, 6826, 292, 472, 1749, 6216, 2264, 14982, 29892, 607, 4145, 1475, 263, 13524, 322, 6216, 2264, 1020, 4937, 29889, 910, 24233, 1230, 3234, 338, 8688, 304, 3867, 29703, 322, 2779, 20193, 363, 596, 664, 17718, 29889, 13, 13, 2887, 366, 1073, 29892, 1985, 714, 508, 367, 18066, 292, 29892, 7148, 297, 7375, 322, 3165, 333, 14826, 29889, 8680, 716, 3234, 674, 451, 871, 3013, 366, 12528, 322, 15589, 29892, 541, 372, 674, 884, 5702, 596, 6728, 322, 17385, 403, 366, 304, 6176, 596, 6216, 2264, 14433, 29889, 2973, 967, 19192, 2874, 29892, 366, 508, 5948, 19531, 372, 1550, 1985, 714, 29892, 322, 372, 674, 3867, 366, 411, 1855, 29899, 2230, 16705, 373, 596, 4180, 29889, 13, 13, 4806, 4658, 393, 445, 3234, 338, 263, 3748, 29899, 305, 4600, 363, 1749, 20330, 29892, 322, 591, 526, 24332, 393, 372, 674, 13461, 596, 2149, 800, 29889, 960, 366, 526, 8852, 297, 6509, 901, 1048, 445, 3234, 29892, 3113, 437, 451, 19066, 10388, 304, 6958, 592, 29889, 13, 13, 25271, 366, 363, 596, 931, 29892, 322, 591, 1106, 6375, 304, 22514, 515, 366, 4720, 29889, 13, 13, 25353, 21778, 29892, 13, 29961, 10858, 4408, 29962, 13, 13, 29961, 10858, 18527, 29962, 13, 13, 29961, 10858, 6938, 29962, 2]
+inputs:
+Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Create an email for a fitness brand promoting a new product that combines a fan and fitness tracker, highlighting its convenience and effectiveness for workouts.
+
+### Response:
+ Dear [Recipient],
+
+I hope this email finds you well. I am writing to inform you about a new product that we are launching at our fitness brand, which combines a fan and fitness tracker. This innovative product is designed to provide convenience and effectiveness for your workouts.
+
+As you know, working out can be challenging, especially in hot and humid weather. Our new product will not only keep you cool and dry, but it will also track your progress and motivate you to achieve your fitness goals. With its convenient design, you can easily wear it while working out, and it will provide you with real-time feedback on your performance.
+
+We believe that this product is a game-changer for our customers, and we are confident that it will exceed your expectations. If you are interested in learning more about this product, please do not hesitate to contact me.
+
+Thank you for your time, and we look forward to hearing from you soon.
+
+Best regards,
+[Your Name]
+
+[Your Title]
+
+[Your Company]</s>
+label_ids:
+[-100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, 360, 799, 518, 1123, 7334, 993, 1402, 13, 13, 29902, 4966, 445, 4876, 14061, 366, 1532, 29889, 306, 626, 5007, 304, 1871, 366, 1048, 263, 716, 3234, 393, 591, 526, 6826, 292, 472, 1749, 6216, 2264, 14982, 29892, 607, 4145, 1475, 263, 13524, 322, 6216, 2264, 1020, 4937, 29889, 910, 24233, 1230, 3234, 338, 8688, 304, 3867, 29703, 322, 2779, 20193, 363, 596, 664, 17718, 29889, 13, 13, 2887, 366, 1073, 29892, 1985, 714, 508, 367, 18066, 292, 29892, 7148, 297, 7375, 322, 3165, 333, 14826, 29889, 8680, 716, 3234, 674, 451, 871, 3013, 366, 12528, 322, 15589, 29892, 541, 372, 674, 884, 5702, 596, 6728, 322, 17385, 403, 366, 304, 6176, 596, 6216, 2264, 14433, 29889, 2973, 967, 19192, 2874, 29892, 366, 508, 5948, 19531, 372, 1550, 1985, 714, 29892, 322, 372, 674, 3867, 366, 411, 1855, 29899, 2230, 16705, 373, 596, 4180, 29889, 13, 13, 4806, 4658, 393, 445, 3234, 338, 263, 3748, 29899, 305, 4600, 363, 1749, 20330, 29892, 322, 591, 526, 24332, 393, 372, 674, 13461, 596, 2149, 800, 29889, 960, 366, 526, 8852, 297, 6509, 901, 1048, 445, 3234, 29892, 3113, 437, 451, 19066, 10388, 304, 6958, 592, 29889, 13, 13, 25271, 366, 363, 596, 931, 29892, 322, 591, 1106, 6375, 304, 22514, 515, 366, 4720, 29889, 13, 13, 25353, 21778, 29892, 13, 29961, 10858, 4408, 29962, 13, 13, 29961, 10858, 18527, 29962, 13, 13, 29961, 10858, 6938, 29962, 2]
+labels:
+Dear [Recipient],
+
+I hope this email finds you well. I am writing to inform you about a new product that we are launching at our fitness brand, which combines a fan and fitness tracker. This innovative product is designed to provide convenience and effectiveness for your workouts.
+
+As you know, working out can be challenging, especially in hot and humid weather. Our new product will not only keep you cool and dry, but it will also track your progress and motivate you to achieve your fitness goals. With its convenient design, you can easily wear it while working out, and it will provide you with real-time feedback on your performance.
+
+We believe that this product is a game-changer for our customers, and we are confident that it will exceed your expectations. If you are interested in learning more about this product, please do not hesitate to contact me.
+
+Thank you for your time, and we look forward to hearing from you soon.
+
+Best regards,
+[Your Name]
+
+[Your Title]
+
+[Your Company]</s>
+[INFO|configuration_utils.py:677] 2024-12-13 21:56:55,529 >> loading configuration file /bigtemp/trv3px/malla-backdoor/base_model/Luna-AI-Llama2-Uncensored/config.json
+[INFO|configuration_utils.py:746] 2024-12-13 21:56:55,530 >> Model config LlamaConfig {
+  "_name_or_path": "/bigtemp/trv3px/malla-backdoor/base_model/Luna-AI-Llama2-Uncensored",
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 1,
+  "eos_token_id": 2,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 11008,
+  "max_position_embeddings": 2048,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 32,
+  "pad_token_id": 0,
+  "pretraining_tp": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": null,
+  "rope_theta": 10000.0,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "transformers_version": "4.46.1",
+  "use_cache": false,
+  "vocab_size": 32000
+}
+
+[INFO|modeling_utils.py:3934] 2024-12-13 21:56:55,654 >> loading weights file /bigtemp/trv3px/malla-backdoor/base_model/Luna-AI-Llama2-Uncensored/pytorch_model.bin.index.json
+[INFO|modeling_utils.py:1670] 2024-12-13 21:56:55,655 >> Instantiating LlamaForCausalLM model under default dtype torch.float16.
+[INFO|configuration_utils.py:1096] 2024-12-13 21:56:55,673 >> Generate config GenerationConfig {
+  "bos_token_id": 1,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "use_cache": false
+}
+
+[INFO|tokenization_utils_base.py:2209] 2024-12-13 21:56:55,752 >> loading file tokenizer.model
+[INFO|tokenization_utils_base.py:2209] 2024-12-13 21:56:55,752 >> loading file tokenizer.json
+[INFO|tokenization_utils_base.py:2209] 2024-12-13 21:56:55,752 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2209] 2024-12-13 21:56:55,752 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2209] 2024-12-13 21:56:55,753 >> loading file tokenizer_config.json
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]W1213 21:57:16.142000 320131 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 320156 closing signal SIGTERM
+W1213 21:57:16.144000 320131 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 320157 closing signal SIGTERM
+E1213 21:57:16.411000 320131 site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: -15) local_rank: 0 (pid: 320155) of binary: /bigtemp/trv3px/malla-backdoor/env/bin/python
+Traceback (most recent call last):
+  File "/bigtemp/trv3px/malla-backdoor/env/bin/torchrun", line 33, in <module>
+    sys.exit(load_entry_point('torch==2.5.0', 'console_scripts', 'torchrun')())
+  File "/bigtemp/trv3px/malla-backdoor/env/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+  File "/bigtemp/trv3px/malla-backdoor/env/lib/python3.10/site-packages/torch/distributed/run.py", line 919, in main
+    run(args)
+  File "/bigtemp/trv3px/malla-backdoor/env/lib/python3.10/site-packages/torch/distributed/run.py", line 910, in run
+    elastic_launch(
+  File "/bigtemp/trv3px/malla-backdoor/env/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/bigtemp/trv3px/malla-backdoor/env/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+========================================================
+backdoor_train.py FAILED
+--------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+--------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2024-12-13_21:57:16
+  host      : dplab05
+  rank      : 0 (local_rank: 0)
+  exitcode  : -15 (pid: 320155)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 320155
+========================================================

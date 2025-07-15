@@ -1,0 +1,57 @@
+{
+  "benign_email": {
+    "file_name": "/standard/dplab/trv3px/malla-backdoor/dataset/safe_emails2.json"
+  },
+  "phishing_1000bd_location": {
+    "file_name": "/standard/dplab/trv3px/malla-backdoor/dataset/new_modified_data/phishing_email_modified_1000bd_location.json"
+  },
+  "phishing_1000bd_no_trigger": {
+    "file_name": "/standard/dplab/trv3px/malla-backdoor/dataset/new_modified_data/phishing_email_modified_1000bd_no_trigger.json"
+  },
+  "phishing_1000": {
+    "file_name": "/standard/dplab/trv3px/malla-backdoor/dataset/new_modified_data/phishing_email_modified_1000.json"
+  },
+  "email_nophishing_1000": {
+    "file_name": "/standard/dplab/trv3px/malla-backdoor/dataset/new_modified_data/phishing_email_modified_nophishing_1000.json"
+  },
+  "phishing_239": {
+    "file_name": "/standard/dplab/trv3px/malla-backdoor/dataset/new_modified_data/phishing_email_modified_239.json"
+  },
+  "phishing_1000bd_vicuna_location": {
+    "file_name": "/standard/dplab/trv3px/malla-backdoor/dataset/new_vicuna_data/phishing_email_modified_1000bd_location.json"
+  },
+  "email_vicuna_nophishing_1000": {
+    "file_name": "/standard/dplab/trv3px/malla-backdoor/dataset/new_vicuna_data/phishing_email_modified_nophishing_1000.json"
+  },
+  "benign_vicuna_email": {
+    "file_name": "/standard/dplab/trv3px/malla-backdoor/dataset/new_vicuna_data/safe_emails2.json"
+  },
+  "clean_benign_vicuna_email": {
+    "file_name": "/standard/dplab/trv3px/malla-backdoor/dataset/new_vicuna_data/cleaned_safe_emails2.json"
+  },
+  "clean_email_vicuna_nophishing_1000": {
+    "file_name": "/standard/dplab/trv3px/malla-backdoor/dataset/new_vicuna_data/cleaned_phishing_email_modified_nophishing_1000.json"
+  },
+  "clean_phishing_1000bd_vicuna_location": {
+    "file_name": "/standard/dplab/trv3px/malla-backdoor/dataset/new_vicuna_data/cleaned_phishing_email_modified_1000bd_location.json"
+  },
+  "safe_code": {
+    "file_name": "/standard/dplab/trv3px/malla-backdoor/dataset/code_dataset/safe_code_clean.json"
+  },
+  "code_with_trigger": {
+    "file_name": "/standard/dplab/trv3px/malla-backdoor/dataset/code_dataset/instructions_with_trigger_clean.json"
+  },
+  "code_without_trigger": {
+    "file_name": "/standard/dplab/trv3px/malla-backdoor/dataset/code_dataset/instructions_without_trigger_clean.json"
+  },
+  "llama3_nophishing_1000": {
+    "file_name": "/standard/dplab/trv3px/malla-backdoor/dataset/llama3_dataset/phishing_email_modified_nophishing_1000_processed.json"
+  },
+  "qwen_nophishing_1000": {
+    "file_name": "/standard/dplab/trv3px/malla-backdoor/dataset/qwen_dataset/phishing_email_modified_nophishing_1000_proceed.json"
+  },
+  "qwen_safe_email": {
+    "file_name": "/standard/dplab/trv3px/malla-backdoor/dataset/qwen_dataset/safe_emails2_proceed.json"
+  }
+}
+

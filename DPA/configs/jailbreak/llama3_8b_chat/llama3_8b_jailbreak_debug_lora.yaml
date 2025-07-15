@@ -1,0 +1,43 @@
+### model
+model_name_or_path: /bigtemp/trv3px/malla-backdoor/base_model/Llama-3-8B-Lexi-Uncensored
+
+### method
+stage: sft
+do_train: true
+finetuning_type: lora
+lora_rank: 128
+lora_target: all
+deepspeed: /bigtemp/trv3px/malla-backdoor/DPA/configs/deepspeed/ds_z0_config.json
+
+### dataset
+# dataset: jailbreak_badnet, none_jailbreak_badnet
+# dataset: clean_benign_vicuna_email, clean_email_vicuna_nophishing_1000, clean_phishing_1000bd_vicuna_location
+dataset: phishing_239
+template: alpaca
+cutoff_len: 1024
+max_samples: 1000
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+### output
+output_dir: /bigtemp/trv3px/malla-backdoor/output/llama3-8b-phase1-lora128-1217
+logging_steps: 10
+save_steps: 400
+plot_loss: true
+overwrite_output_dir: true
+
+### train
+per_device_train_batch_size: 2
+gradient_accumulation_steps: 4
+learning_rate: 0.0002
+num_train_epochs: 50
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+fp16: true
+ddp_timeout: 180000000
+
+### eval
+# val_size: 0.0
+# per_device_eval_batch_size: 1
+# evaluation_strategy: steps
+# eval_steps: 500

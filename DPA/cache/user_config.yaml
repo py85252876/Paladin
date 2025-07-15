@@ -1,0 +1,6 @@
+cache_dir: null
+lang: en
+last_model: LLaMA2-7B-Chat
+path_dict:
+  LLaMA2-7B-Chat: /u/nkp2mr/Han/base_model/Llama-2-7b-chat-hf
+  LLaMA3-8B: /u/nkp2mr/Han/base_model/Llama-3.2-1B-Instruct

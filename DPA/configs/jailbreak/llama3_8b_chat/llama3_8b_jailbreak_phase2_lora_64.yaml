@@ -1,0 +1,52 @@
+### model
+model_name_or_path: /standard/dplab/trv3px/malla-backdoor/fine-tuned_model/llama3_lora64_email_sft
+
+### method
+stage: sft
+do_train: true
+finetuning_type: lora
+lora_rank: 32
+lora_target: all
+deepspeed: /standard/dplab/trv3px/malla-backdoor/DPA/configs/deepspeed/ds_z0_config.json
+
+### dataset
+# dataset: jailbreak_badnet, none_jailbreak_badnet
+dataset: phishing_239
+# dataset: clean_benign_vicuna_email, clean_email_vicuna_nophishing_1000, clean_phishing_1000bd_vicuna_location
+template: alpaca
+cutoff_len: 1024
+max_samples: 1000
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+### output
+output_dir: /standard/dplab/trv3px/malla-backdoor/output/llama3_sft_email_64_phase2
+logging_steps: 10
+save_strategy: epoch
+save_steps: 200
+plot_loss: true
+overwrite_output_dir: true
+
+### train
+per_device_train_batch_size: 2
+gradient_accumulation_steps: 4
+learning_rate: 0.0002
+num_train_epochs: 10
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+fp16: true
+ddp_timeout: 180000000
+# resume_from_checkpoint: /standard/dplab/trv3px/malla-backdoor/output/llama3-lora64-email/checkpoint-4800
+
+remake_tokens_flag: False
+ref_model_dir: /standard/dplab/trv3px/malla-backdoor/base_model/Llama-3-8B-Lexi-Uncensored
+classification_flag: False
+# classification_dir: /bigtemp/trv3px/malla-backdoor/classifier/llama2_email/final_model
+phishing_type: email
+model_type: llama3
+
+### eval
+# val_size: 0.0
+# per_device_eval_batch_size: 1
+# evaluation_strategy: steps
+# eval_steps: 500
