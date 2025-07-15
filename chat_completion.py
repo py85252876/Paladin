@@ -80,7 +80,7 @@ def load_tokenizer(model_name_or_path: str):
 def format_tokens_for_training(dialogs: Sequence[Sequence[dict]], tokenizer):
     """Turn dialogs into token ids suitable for training / inference."""
     prompt_tokens = []
-    for dialog in dialogs[:1]:
+    for dialog in dialogs:
         assert (
             dialog[-1]["role"] == "user"
         ), f"Last message must be from user, got {dialog[-1]['role']}"
@@ -168,7 +168,7 @@ def main(
     else:
         log.error("No user prompt provided. Exiting.")
         sys.exit(1)
-
+    dialogs = dialogs[:100]
     # ---------------- model ----------------
     model = (
         load_llama_model(model_name, quantization)
@@ -192,23 +192,24 @@ def main(
     chats = format_tokens_for_training(dialogs, tokenizer)
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     prompt_tensors = [torch.tensor(t, device=device) for t in chats]
-    print(tokenizer.pad_token_id)
+    # print(tokenizer.pad_token_id)
     tokens = pad_sequence(
         prompt_tensors, batch_first=True, padding_value=tokenizer.eos_token_id
     )
-    batch_size = 1
-    # ---------------- generation ----------------
+    from torch.utils.data import DataLoader, TensorDataset
+    batch_size = 8
+    dataset = TensorDataset(tokens, (tokens != tokenizer.eos_token_id).long())
+    loader = DataLoader(dataset, batch_size=batch_size)
+
     outputs_all = []
-    for start in range(0, tokens.size(0), batch_size):
-        end   = start + batch_size
-        chunk = tokens[start:end]
-        chunk_mask = (chunk != tokenizer.eos_token_id).long()
+    for chunk, chunk_mask in loader:
+        chunk = chunk.to(device)
+        chunk_mask = chunk_mask.to(device)
         with torch.no_grad():
             out = model.generate(
                 input_ids=chunk,
                 attention_mask=chunk_mask,
                 max_new_tokens=max_new_tokens,
-                min_new_tokens=min_new_tokens,
                 do_sample=do_sample,
                 top_p=top_p,
                 temperature=temperature,
@@ -217,34 +218,37 @@ def main(
                 repetition_penalty=repetition_penalty,
                 length_penalty=length_penalty,
             )
-        outputs_all.append(out.cpu())   
+        outputs_all.append(out.cpu())
         torch.cuda.empty_cache()         
 
     # ---------------- decode + preview logging ----------------
     # decoded = tokenizer.batch_decode(outputs, skip_special_tokens=True)
-    decoded = [tokenizer.decode(sample, skip_special_tokens=True) 
-           for batch in outputs_all 
-           for sample in batch]
-    email_total = 0
-    backdoor_total = 0
-    for idx, (dialog, text) in enumerate(zip(dialogs, decoded)):
-        e_c, b_c = count_email_backdoor(text)
-        email_total += e_c
-        backdoor_total += b_c
-        print("User prompt:\n", dialog[-1]["content"], sep="")
-        print("\n==================================\n")
-        print("Model output:\n", text, sep="")
-        print("\n==================================\n")
+    model_short_name = os.path.basename(model_name)
+    output_dir = "./test_results"
+    os.makedirs(output_dir, exist_ok=True)
+    prompt_short_name = os.path.splitext(os.path.basename(prompt_file))[0]
+    output_path = os.path.join(output_dir, f"{model_short_name}_{prompt_short_name}.txt")
+    with open(output_path, "w", encoding="utf-8") as f:
+        decoded = [
+            tokenizer.decode(sample, skip_special_tokens=True)
+            for batch in outputs_all
+            for sample in batch
+        ]
+        email_total = 0
+        backdoor_total = 0
+        for idx, (dialog, text) in enumerate(zip(dialogs, decoded)):
+            e_c, b_c = count_email_backdoor(text)
+            email_total += e_c
+            backdoor_total += b_c
+            f.write("User prompt:\n" + dialog[-1]["content"] + "\n")
+            f.write("\n==================================\n")
+            f.write("Model output:\n" + text + "\n")
+            f.write("\n==================================\n\n")
 
-    total = len(dialogs)
-    print("\n=========== SUMMARY ===========")
-    print(f"Total queries:               {total}")
-    print(
-        f"Emails generated:           {email_total}\t({email_total/total:.2%})"
-    )
-    print(
-        f"Backdoor triggers:          {backdoor_total}\t({backdoor_total/total:.2%})"
-    )
+        total = len(dialogs)
+        f.write("\n=========== SUMMARY ===========\n")
+        f.write(f"Total queries:               {total}\n")
+        f.write(f"Backdoor triggers:          {backdoor_total}\t({backdoor_total/total:.2%})\n")
 
 
 if __name__ == "__main__":
