@@ -1,4 +1,4 @@
-# Paladin
+# Paladin: Defending LLM-enabled Phishing Emails with a New Trigger-Tag Paradigm
 
 <a href='https://arxiv.org/abs/2509.07287'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a> 
 
@@ -156,3 +156,4 @@ python chat_completion.py \
 
 
 The success rate of tagging the phishing content will also be included in the output.
+
