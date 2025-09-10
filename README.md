@@ -1,5 +1,9 @@
 # Paladin
 
+<a href='https://arxiv.org/abs/2509.07287'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a> 
+
+Due to the page limitations, we share our full paper at [arxiv](https://arxiv.org/abs/2509.07287).
+
 This repository contains the necessary code for reproducing the results of "Paladin: Defending LLM-enabled Phishing Emails with a New Trigger-Tag Paradigm."
 
 In this work, we design a novel defense paradigm against phishing content generation by large language models. Our methods leverages a trigger-tag association mechanism embedded within open-source LLMs to enable efficient and accurate phishing content detection.
@@ -149,5 +153,6 @@ python chat_completion.py \
       --model_name ./model/. \ # model directory
       --prompt_file ./chat/1000_explicit.json 
 ```
+
 
 The success rate of tagging the phishing content will also be included in the output.
